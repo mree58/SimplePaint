@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>   
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/RelativeGridLayout"
+android:layout_width="wrap_content"
+android:layout_height="fill_parent"
+android:background="@color/soft_purple"
+android:orientation="vertical"
+>
+
+<GridView
+    android:id="@+id/grdFotograflar"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_above="@+id/btnTamam"
+  	android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+	android:padding="3dp"
+    android:numColumns="2"
+    android:gravity="center"
+    android:smoothScrollbar="true"
+	android:scrollbarStyle="outsideOverlay"
+    android:verticalSpacing="10dp"
+    android:horizontalSpacing="20dp"
+     />
+
+
+<ImageButton
+    android:id="@+id/btnTamam"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+	android:src="@drawable/ic_arrow_back_black_24dp"
+	android:tint="@color/soft_orange"
+	android:background="@drawable/selector_button_details"
+    android:textColor="@color/white"
+    android:onClick="onClick"/>
+
+</RelativeLayout>

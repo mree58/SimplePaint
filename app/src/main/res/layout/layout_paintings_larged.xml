@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    >
+
+     <RelativeLayout
+         android:id="@+id/RelativeLayout2"
+         android:layout_width="wrap_content"
+         android:layout_height="match_parent" >
+         
+             <ImageButton
+                android:id="@+id/btnSil"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/ic_delete_black_24dp"
+                android:tint="@color/soft_orange"
+                android:background="@drawable/selector_button_details"
+                android:textColor="@color/white" />
+
+    		<android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/btnSil" />
+
+   </RelativeLayout>
+
+</RelativeLayout>
