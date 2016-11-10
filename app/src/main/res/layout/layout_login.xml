@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/soft_purple">
+
+
+    <ImageButton
+        android:id="@+id/btn_login_rate"
+        android:layout_width="@dimen/dimen_login_button"
+        android:layout_height="@dimen/dimen_login_button"
+        android:scaleType="fitCenter"
+        android:padding="13dp"
+        android:background="@drawable/design_round_login_buttons"
+        android:src="@drawable/ic_star_black_24dp"
+        android:tint="@color/soft_orange"
+        android:onClick="loginOnClick"
+        android:layout_alignTop="@+id/btn_login_about"
+        android:layout_toEndOf="@+id/btn_login_quit" />
+
+    <ImageButton
+        android:id="@+id/btn_login_new"
+        android:layout_width="@dimen/dimen_login_button"
+        android:layout_height="@dimen/dimen_login_button"
+        android:scaleType="fitCenter"
+        android:padding="13dp"
+        android:background="@drawable/design_round_login_buttons"
+        android:src="@drawable/ic_palette_black_24dp"
+        android:tint="@color/soft_orange"
+        android:onClick="loginOnClick"
+        android:layout_marginBottom="70dp"
+        android:layout_above="@+id/btn_login_about"
+        android:layout_alignStart="@+id/btn_login_about" />
+
+    <ImageButton
+        android:id="@+id/btn_login_gallery"
+        android:layout_width="@dimen/dimen_login_button"
+        android:layout_height="@dimen/dimen_login_button"
+        android:scaleType="fitCenter"
+        android:padding="13dp"
+        android:background="@drawable/design_round_login_buttons"
+        android:src="@drawable/ic_photo_black_24dp"
+        android:tint="@color/soft_orange"
+        android:onClick="loginOnClick"
+        android:layout_alignTop="@+id/btn_login_new"
+        android:layout_alignStart="@+id/btn_login_rate" />
+
+    <ImageButton
+        android:id="@+id/btn_login_about"
+        android:layout_width="@dimen/dimen_login_button"
+        android:layout_height="@dimen/dimen_login_button"
+        android:scaleType="fitCenter"
+        android:padding="13dp"
+        android:background="@drawable/design_round_login_buttons"
+        android:src="@drawable/ic_info"
+        android:tint="@color/soft_orange"
+        android:onClick="loginOnClick"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/btn_login_quit" />
+
+    <ImageButton
+        android:id="@+id/btn_login_quit"
+        android:layout_width="@dimen/dimen_login_button"
+        android:layout_height="@dimen/dimen_login_button"
+        android:scaleType="fitCenter"
+        android:padding="13dp"
+        android:background="@drawable/design_round_login_buttons"
+        android:src="@drawable/ic_power_settings_new_black_24dp"
+        android:tint="@color/soft_orange"
+        android:onClick="loginOnClick"
+        android:layout_below="@+id/btn_login_rate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp" />
+
+    <TextView
+        android:text="@string/menu_mypaintings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_login_gallery"
+        android:layout_alignStart="@+id/btn_login_gallery"
+        android:layout_alignEnd="@+id/btn_login_gallery"
+        android:gravity="center"
+        android:id="@+id/txt_mypaintings" />
+
+    <TextView
+        android:text="@string/menu_about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_login_about"
+        android:layout_alignStart="@+id/btn_login_about"
+        android:layout_alignEnd="@+id/btn_login_about"
+        android:gravity="center"
+        android:id="@+id/txt_about" />
+
+    <TextView
+        android:text="@string/menu_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_login_rate"
+        android:layout_alignStart="@+id/btn_login_rate"
+        android:layout_alignEnd="@+id/btn_login_rate"
+        android:gravity="center"
+        android:id="@+id/txt_rate" />
+
+    <TextView
+        android:text="@string/menu_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_login_quit"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/txt_exit" />
+
+    <TextView
+        android:text="@string/menu_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_new"
+        android:layout_alignBaseline="@+id/txt_mypaintings"
+        android:layout_below="@+id/btn_login_new"
+        android:layout_alignStart="@+id/btn_login_new"
+        android:layout_alignEnd="@+id/btn_login_new"
+        android:gravity="center"/>
+
+
+</RelativeLayout>

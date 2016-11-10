@@ -1,0 +1,104 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/soft_purple"
+
+	android:orientation="vertical"
+	tools:context=".MainActivity" >
+
+	<!--android:background="#FFCCCCCC"-->
+
+
+	<com.emrebaran.simplepaint.DrawingView
+		android:id="@+id/drawing"
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_marginBottom="3dp"
+		android:layout_weight="1"
+		android:background="#FFFFFFFF" />
+
+
+		<LinearLayout
+			android:id="@+id/paint_colors"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:weightSum="5">
+
+
+			<ImageButton
+				android:id="@+id/btn_color_palette"
+				android:layout_width="@dimen/dimen_paint_buttons"
+				android:layout_height="@dimen/dimen_paint_buttons"
+				android:layout_weight="1"
+				android:scaleType="fitCenter"
+				android:padding="12dp"
+				android:background="@drawable/design_round_login_buttons"
+				android:src="@drawable/ic_paint_palette"
+				android:onClick="paintOnClick"/>
+
+
+			<ImageButton
+				android:id="@+id/btn_paint_brush"
+				android:layout_width="@dimen/dimen_paint_buttons"
+				android:layout_height="@dimen/dimen_paint_buttons"
+				android:layout_weight="1"
+				android:scaleType="fitCenter"
+				android:padding="12dp"
+				android:background="@drawable/design_round_login_buttons"
+				android:src="@drawable/ic_paint_brush"
+				android:onClick="paintOnClick"/>
+
+			<ImageButton
+				android:id="@+id/btn_paint_thickness"
+				android:layout_width="@dimen/dimen_paint_buttons"
+				android:layout_height="@dimen/dimen_paint_buttons"
+				android:layout_weight="1"
+				android:scaleType="fitCenter"
+				android:padding="12dp"
+				android:background="@drawable/design_round_login_buttons"
+				android:src="@drawable/ic_paint_thickness"
+				android:onClick="paintOnClick"/>
+
+			<ImageButton
+				android:id="@+id/btn_eraser"
+				android:layout_width="@dimen/dimen_paint_buttons"
+				android:layout_height="@dimen/dimen_paint_buttons"
+				android:layout_weight="1"
+				android:scaleType="fitCenter"
+				android:padding="12dp"
+				android:background="@drawable/design_round_login_buttons"
+				android:src="@drawable/ic_paint_eraser"
+				android:onClick="paintOnClick"/>
+
+
+
+			<ImageButton
+				android:id="@+id/btn_new"
+				android:layout_width="@dimen/dimen_paint_buttons"
+				android:layout_height="@dimen/dimen_paint_buttons"
+				android:layout_weight="1"
+				android:scaleType="fitCenter"
+				android:padding="12dp"
+				android:background="@drawable/design_round_login_buttons"
+				android:src="@drawable/ic_paint_new"
+				android:onClick="paintOnClick"/>
+
+
+			<ImageButton
+				android:id="@+id/btn_save"
+				android:layout_width="@dimen/dimen_paint_buttons"
+				android:layout_height="@dimen/dimen_paint_buttons"
+				android:layout_weight="1"
+				android:scaleType="fitCenter"
+				android:padding="12dp"
+				android:background="@drawable/design_round_login_buttons"
+				android:src="@drawable/ic_paint_save"
+				android:onClick="paintOnClick"/>
+
+
+		</LinearLayout>
+
+
+</LinearLayout>
