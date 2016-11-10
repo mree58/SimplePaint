@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <integer name="dimen_color_palette1">128</integer>
+    <integer name="dimen_color_palette2">5</integer>
+    <integer name="dimen_color_palette3">200</integer>
+    <integer name="dimen_color_palette4">64</integer>
+
+</resources>
