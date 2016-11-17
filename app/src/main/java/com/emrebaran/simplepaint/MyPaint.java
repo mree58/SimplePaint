@@ -77,7 +77,7 @@ public class MyPaint extends Activity implements ColorPickerDialog.OnColorChange
 
                 final Dialog brushDialog = new Dialog(this);
                 brushDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                brushDialog.setContentView(R.layout.brush_chooser);
+                brushDialog.setContentView(R.layout.thickness_chooser);
 
 
                 final TextView txtBrushTickness = (TextView) brushDialog.findViewById(R.id.txt_brush_thickness);
