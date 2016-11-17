@@ -66,21 +66,21 @@ public class MyPaintingsLarged extends Activity {
 				public void onClick(View v) {
 					
     				final AlertDialog.Builder builder = new AlertDialog.Builder(MyPaintingsLarged.this);
-    				builder.setMessage("Foto�raf� silmek istedi�inize emin misiniz?")
+    				builder.setMessage(getString(R.string.gallery_delete))
 							.setCancelable(false)
-		    				.setPositiveButton("Evet", new DialogInterface.OnClickListener() {
+		    				.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
 		    					public void onClick(DialogInterface dialog, int id) {
 
 									File file = new File(String.valueOf(MyPaintings.listOfImagesPath.get(currentPage)));
 									file.delete();
 									MyPaintings.listOfImagesPath.remove(currentPage);
-									Toast.makeText(getApplicationContext(), "Silindi",Toast.LENGTH_SHORT).show();
+									Toast.makeText(getApplicationContext(), getString(R.string.deleted),Toast.LENGTH_SHORT).show();
 									currentPage=0;
 									onStop();
 									onDestroy();
 		    					}
 		    				})
-		    				.setNegativeButton("Hay�r", new DialogInterface.OnClickListener() {
+		    				.setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
 		    					public void onClick(DialogInterface dialog, int id) {
 		    						dialog.cancel();
 		    					}

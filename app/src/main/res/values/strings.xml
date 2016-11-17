@@ -20,4 +20,15 @@
     <string name="app_exit">Press Again To Exit</string>
 
 
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+
+    <string name="paint_new">Are you sure you want to start new paint ?</string>
+    <string name="paint_save">Do you want to save this painting ?</string>
+    <string name="saved">Saved !</string>
+
+    <string name="gallery_delete">Are you sure you want to delete this painting ?</string>
+    <string name="deleted">Deleted !</string>
+
+
 </resources>

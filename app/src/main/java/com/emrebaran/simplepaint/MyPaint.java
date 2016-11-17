@@ -121,14 +121,14 @@ public class MyPaint extends Activity implements ColorPickerDialog.OnColorChange
             case R.id.btn_new :
 
                 AlertDialog.Builder newDialog = new AlertDialog.Builder(this);
-                newDialog.setMessage("Yeni Bir Çizime Başlamak İstiyor Musunuz ?");
-                newDialog.setPositiveButton("Evet", new DialogInterface.OnClickListener(){
+                newDialog.setMessage(getString(R.string.paint_new));
+                newDialog.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int which){
                         drawView.startNew();
                         dialog.dismiss();
                     }
                 });
-                newDialog.setNegativeButton("Hayır", new DialogInterface.OnClickListener(){
+                newDialog.setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int which){
                         dialog.cancel();
                     }
@@ -138,8 +138,8 @@ public class MyPaint extends Activity implements ColorPickerDialog.OnColorChange
                 break;
             case R.id.btn_save :
                 AlertDialog.Builder saveDialog = new AlertDialog.Builder(this);
-                saveDialog.setMessage("Bu Çizim Notlarınızın Arasına Kaydedilsin Mi ?");
-                saveDialog.setPositiveButton("Evet", new DialogInterface.OnClickListener(){
+                saveDialog.setMessage(getString(R.string.paint_save));
+                saveDialog.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int which){
 
                         drawView.setDrawingCacheEnabled(true);
@@ -156,7 +156,7 @@ public class MyPaint extends Activity implements ColorPickerDialog.OnColorChange
                             FileOutputStream stream = new FileOutputStream(file);
                             bitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
                             stream.close();
-                            Toast.makeText(getApplicationContext(), "Kaydedildi !", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), getString(R.string.saved), Toast.LENGTH_SHORT).show();
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
                         } catch (IOException e) {
@@ -167,7 +167,7 @@ public class MyPaint extends Activity implements ColorPickerDialog.OnColorChange
                         drawView.destroyDrawingCache();
                     }
                 });
-                saveDialog.setNegativeButton("Hayır", new DialogInterface.OnClickListener(){
+                saveDialog.setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int which){
                         dialog.cancel();
                     }

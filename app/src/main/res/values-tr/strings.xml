@@ -19,4 +19,13 @@
 
     <string name="app_exit">Çıkmak için tekrar basın</string>
 
+    <string name="yes">EVET</string>
+    <string name="no">HAYIR</string>
+
+    <string name="paint_new">Yeni bir çizime başlamak istiyor musunuz ?</string>
+    <string name="paint_save">Bu çizim kaydedilsin mi ?</string>
+    <string name="saved">Kaydedildi !</string>
+
+    <string name="gallery_delete">Bu çizimi silmek istediğinize emin misiniz ?</string>
+    <string name="deleted">Silindi !</string>
 </resources>
