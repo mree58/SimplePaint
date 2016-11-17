@@ -25,7 +25,7 @@
         android:scaleType="fitCenter"
         android:padding="13dp"
         android:background="@drawable/design_round_login_buttons"
-        android:src="@drawable/ic_palette_black_24dp"
+        android:src="@drawable/ic_paint_palette"
         android:tint="@color/soft_orange"
         android:onClick="loginOnClick"
         android:layout_marginBottom="70dp"

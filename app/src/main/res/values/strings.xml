@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Simple Paint</string>
+
+    <string name="menu_new">New</string>
+    <string name="menu_mypaintings">My Paintings</string>
+    <string name="menu_about">About</string>
+    <string name="menu_rate">Rate Us</string>
+    <string name="menu_exit">Exit</string>
+
+    <string name="about_simplepaint">This mobile application designed and coded by Emre Baran. Some icons and graphs have CC-BY License. Some of them are free for personal and commercial use. And a few of them are designed by Emre Baran.</string>
+    <string name="about_title_special_thanks">Special Thanks</string>
+    <string name="about_special_thanks">Sue Smith : Thank you for drawing app example.\nAynur Gündoğan : Thank you for beta testing and sharing your ideas.</string>
+    <string name="about_title_application">About Application</string>
+    <string name="about_application">This application is open-source software. You can find the source codes on GitHub: mree58 \nFeel free to contact if you have any ideas or problems with application. Mail: emrebaran.ceng@gmail.com</string>
+    <string name="about_title_permissions">About Permissions</string>
+    <string name="about_permissions">WRITE_EXTERNAL_STORAGE: for saving your paintings \nREAD_EXTERNAL_STORAGE: for showing you to your paintings</string>
+    <string name="about_application_version">Application Version:</string>
+    <string name="about_supported_languages">Supported Languages:</string>
+
+    <string name="app_exit">Press Again To Exit</string>
+
+
+</resources>

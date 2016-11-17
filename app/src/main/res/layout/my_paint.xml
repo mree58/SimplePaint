@@ -36,6 +36,7 @@
 				android:padding="12dp"
 				android:background="@drawable/design_round_login_buttons"
 				android:src="@drawable/ic_paint_palette"
+				android:tint="@color/soft_orange"
 				android:onClick="paintOnClick"/>
 
 
@@ -48,6 +49,7 @@
 				android:padding="12dp"
 				android:background="@drawable/design_round_login_buttons"
 				android:src="@drawable/ic_paint_brush"
+				android:tint="@color/soft_orange"
 				android:onClick="paintOnClick"/>
 
 			<ImageButton
@@ -59,6 +61,7 @@
 				android:padding="12dp"
 				android:background="@drawable/design_round_login_buttons"
 				android:src="@drawable/ic_paint_thickness"
+				android:tint="@color/soft_orange"
 				android:onClick="paintOnClick"/>
 
 			<ImageButton
@@ -70,6 +73,7 @@
 				android:padding="12dp"
 				android:background="@drawable/design_round_login_buttons"
 				android:src="@drawable/ic_paint_eraser"
+				android:tint="@color/soft_orange"
 				android:onClick="paintOnClick"/>
 
 
@@ -83,6 +87,7 @@
 				android:padding="12dp"
 				android:background="@drawable/design_round_login_buttons"
 				android:src="@drawable/ic_paint_new"
+				android:tint="@color/soft_orange"
 				android:onClick="paintOnClick"/>
 
 
@@ -95,6 +100,7 @@
 				android:padding="12dp"
 				android:background="@drawable/design_round_login_buttons"
 				android:src="@drawable/ic_paint_save"
+				android:tint="@color/soft_orange"
 				android:onClick="paintOnClick"/>
 
 

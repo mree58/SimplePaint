@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.ImageButton;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 
@@ -21,8 +20,6 @@ import android.widget.Toast;
  * Created by mree on 01.11.2016.
  */
 public class Login  extends Activity{
-
-    ImageButton Close;
 
     DisplayMetrics metrics;
 
@@ -80,7 +77,7 @@ public class Login  extends Activity{
             View layout = inflater.inflate(R.layout.layout_about, (ViewGroup) findViewById(R.id.popup_1));
 
             float popupWidth = 350*metrics.scaledDensity;
-            float popupHeight = 490*metrics.scaledDensity;
+            float popupHeight = 450*metrics.scaledDensity;
 
             pw = new PopupWindow(context);
             pw.setContentView(layout);
@@ -93,20 +90,10 @@ public class Login  extends Activity{
             p.y = 50;
 
             int OFFSET_X = -50;
-            int OFFSET_Y = (int)(25*metrics.scaledDensity);
+            int OFFSET_Y = (int)(80*metrics.scaledDensity);
 
 
             pw.showAtLocation(layout, Gravity.TOP, p.x + OFFSET_X, p.y + OFFSET_Y);
-
-
-            Close = (ImageButton) layout.findViewById(R.id.close_popup);
-            Close.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    pw.dismiss();
-
-                }
-            });
 
         } catch (Exception e) {
             e.printStackTrace();

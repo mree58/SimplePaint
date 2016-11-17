@@ -31,9 +31,7 @@ public class MyPaint extends Activity implements ColorPickerDialog.OnColorChange
 
     private DrawingView drawView;
 
-    ImageButton btnColorPalette,btnPaintBrush,btnEraser;
-
-    ImageButton btnNew,btnSave;
+    ImageButton btnColorPalette;
 
     int lastColor=0xFF0000FF;
 
@@ -47,15 +45,6 @@ public class MyPaint extends Activity implements ColorPickerDialog.OnColorChange
         setContentView(R.layout.my_paint);
 
         drawView = (DrawingView)findViewById(R.id.drawing);
-
-        btnNew = (ImageButton)findViewById(R.id.btn_new);
-        //   btnNew.setOnClickListener(this);
-
-        btnSave = (ImageButton)findViewById(R.id.btn_save);
-        //   btnSave.setOnClickListener(this);
-
-        btnPaintBrush = (ImageButton)findViewById(R.id.btn_paint_brush);
-        //  btnNormal.setOnClickListener(this);
 
         btnColorPalette = (ImageButton)findViewById(R.id.btn_color_palette);
         btnColorPalette.setOnClickListener(new View.OnClickListener() {
@@ -152,50 +141,29 @@ public class MyPaint extends Activity implements ColorPickerDialog.OnColorChange
                 saveDialog.setMessage("Bu Çizim Notlarınızın Arasına Kaydedilsin Mi ?");
                 saveDialog.setPositiveButton("Evet", new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int which){
+
                         drawView.setDrawingCacheEnabled(true);
-
-
-                        String imgSaved = "null" ; /* MediaStore.Images.Media.insertImage(
-                            getContentResolver(), drawView.getDrawingCache(),
-                            UUID.randomUUID().toString()+".png", "drawing"); */
-
                         String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/SimplePaint/";
-
-
-                        Toast.makeText(getApplicationContext(),path,Toast.LENGTH_LONG).show();
-
 
                         File folder = new File(path);
                         folder.mkdirs();
 
                         String dateFormat = new SimpleDateFormat("ddMMyyyy_HHmmss", Locale.getDefault()).format(new Date());
-
-
                         File file = new File(path, "SP_"+dateFormat+".png");
-
-
-                        Toast.makeText(getApplicationContext(),path,Toast.LENGTH_LONG).show();
 
                         Bitmap bitmap = drawView.getDrawingCache();
                         try {
                             FileOutputStream stream = new FileOutputStream(file);
                             bitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
                             stream.close();
+                            Toast.makeText(getApplicationContext(), "Kaydedildi !", Toast.LENGTH_SHORT).show();
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
+
                         drawView.setDrawingCacheEnabled(false);
-
-
-
-                /*    if(imgSaved!=null){
-                        Toast.makeText(getApplicationContext(), "Galeriye Kaydedildi !", Toast.LENGTH_SHORT).show();
-                    }
-                    else{
-                        Toast.makeText(getApplicationContext(), "Hata! Yeni Not Kaydedilemedi !", Toast.LENGTH_SHORT).show();
-                    } */
                         drawView.destroyDrawingCache();
                     }
                 });

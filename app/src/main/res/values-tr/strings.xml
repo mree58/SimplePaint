@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Simple Paint</string>
+
+    <string name="menu_new">Yeni</string>
+    <string name="menu_mypaintings">Çizimlerim</string>
+    <string name="menu_about">Hakkında</string>
+    <string name="menu_rate">Oylayın</string>
+    <string name="menu_exit">Çıkış</string>
+
+    <string name="about_simplepaint">Bu mobil uygulama Emre Baran tarafından tasarlanmış ve kodlanmıştır. Bazı ikonlar ve görseller CC-BY Lisansı\'na sahiptir. Bir kısmının kişisel ve ticari kullanımı serbesttir. Az bir kısmı Emre Baran tarafından tasarlanmıştır.</string>
+    <string name="about_title_special_thanks">Özel Teşekkür</string>
+    <string name="about_special_thanks">Sue Smith : Çizim örneği için teşekkürler.\nAynur Gündoğan : Uygulamayı test edip fikirlerini paylaştığın için teşekkürler.</string>
+    <string name="about_title_application">Uygulama Hakkında</string>
+    <string name="about_application">Bu uygulama açık-kaynak bir yazılımdır. Kaynak kodları GitHub\'da bulabilirsiniz: mree58 \nFikirlerinizi paylaşmak istiyorsanız veya uygulama ile ilgili sorun yaşıyorsanız lütfen iletişime geçin. Mail: emrebaran.ceng@gmail.com</string>
+    <string name="about_title_permissions">İzinler Hakkında</string>
+    <string name="about_permissions">WRITE_EXTERNAL_STORAGE: çizimlerinizi kaydedebilmek için \nREAD_EXTERNAL_STORAGE: kayıtlı çizimlerinizi size gösterebilmek için</string>
+    <string name="about_application_version">Uygulama Versiyonu:</string>
+    <string name="about_supported_languages">Desteklenen Diller:</string>
+
+    <string name="app_exit">Çıkmak için tekrar basın</string>
+
+</resources>
