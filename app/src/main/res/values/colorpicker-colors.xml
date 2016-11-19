@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Default Colors !-->
+
+    <color name="color1">#FF0000</color>
+    <color name="color2">#FF7F00</color>
+    <color name="color3">#FFA500</color>
+    <color name="color4">#FFD700</color>
+    <color name="color5">#FFFF00</color>
+
+    <color name="color6">#000080</color>
+    <color name="color7">#0000FF</color>
+    <color name="color8">#0066FF</color>
+    <color name="color9">#00FFFF</color>
+    <color name="color10">#99FFCC</color>
+
+    <color name="color11">#330066</color>
+    <color name="color12">#990066</color>
+    <color name="color13">#8c47fb</color>
+    <color name="color14">#FF1493</color>
+    <color name="color15">#FF66FF</color>
+
+    <color name="color16">#006600</color>
+    <color name="color17">#00CC00</color>
+    <color name="color18">#66FF66</color>
+    <color name="color19">#000000</color>
+    <color name="color20">#808080</color>
+
+    <color name="lite_blue">#42a5f5</color>
+    <color name="window_background">#00000000</color>
+    <color name="black_de">#000000</color>
+
+</resources>

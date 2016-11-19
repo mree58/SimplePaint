@@ -9,7 +9,7 @@
 
     <string name="about_simplepaint">Bu mobil uygulama Emre Baran tarafından tasarlanmış ve kodlanmıştır. Bazı ikonlar ve görseller CC-BY Lisansı\'na sahiptir. Bir kısmının kişisel ve ticari kullanımı serbesttir. Az bir kısmı Emre Baran tarafından tasarlanmıştır.</string>
     <string name="about_title_special_thanks">Özel Teşekkür</string>
-    <string name="about_special_thanks">Sue Smith : Çizim örneği için teşekkürler.\nAynur Gündoğan : Uygulamayı test edip fikirlerini paylaştığın için teşekkürler.</string>
+    <string name="about_special_thanks">Sue Smith : Çizim örneği için teşekkürler.\nKristiyan Petrov: Renk seçim kütüphanesi için teşekkürler.\nAynur Gündoğan : Uygulamayı test edip fikirlerini paylaştığın için teşekkürler.</string>
     <string name="about_title_application">Uygulama Hakkında</string>
     <string name="about_application">Bu uygulama açık-kaynak bir yazılımdır. Kaynak kodları GitHub\'da bulabilirsiniz: mree58 \nFikirlerinizi paylaşmak istiyorsanız veya uygulama ile ilgili sorun yaşıyorsanız lütfen iletişime geçin. Mail: emrebaran.ceng@gmail.com</string>
     <string name="about_title_permissions">İzinler Hakkında</string>
@@ -28,4 +28,8 @@
 
     <string name="gallery_delete">Bu çizimi silmek istediğinize emin misiniz ?</string>
     <string name="deleted">Silindi !</string>
+
+    <string name="colorpicker_dialog_cancel">İPTAL</string>
+    <string name="colorpicker_dialog_ok">TAMAM</string>
+
 </resources>

@@ -126,7 +126,7 @@
             android:textColor="@color/black"
             android:layout_gravity="center"
             android:textSize="@dimen/dimen_about_text_size"
-            android:text="1.0.0" />
+            android:text="1.1.0" />
 
     </LinearLayout>
 

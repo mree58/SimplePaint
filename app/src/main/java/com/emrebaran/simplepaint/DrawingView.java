@@ -97,6 +97,8 @@ public class DrawingView extends View {
         drawPaint.setColor(newColor);
     }
 
+
+
     public void setBrushSize(int newSize){
         float pixelAmount = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                 newSize, getResources().getDisplayMetrics());
@@ -121,6 +123,11 @@ public class DrawingView extends View {
 
     }
 
+    public boolean getEraseStatus(){
+
+        return erase;
+
+    }
     //start new drawing
     public void startNew(){
         drawCanvas.drawColor(0, PorterDuff.Mode.CLEAR);

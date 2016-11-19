@@ -15,6 +15,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.emrebaran.simplepaint.colorpicker.ColorPicker;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -27,7 +29,7 @@ import java.util.Locale;
  * Created by mree on 08.11.2016.
  */
 
-public class MyPaint extends Activity implements ColorPickerDialog.OnColorChangedListener {
+public class MyPaint extends Activity {
 
     private DrawingView drawView;
 
@@ -45,12 +47,42 @@ public class MyPaint extends Activity implements ColorPickerDialog.OnColorChange
         setContentView(R.layout.my_paint);
 
         drawView = (DrawingView)findViewById(R.id.drawing);
+        drawView.setNewColor(lastColor);
 
         btnColorPalette = (ImageButton)findViewById(R.id.btn_color_palette);
         btnColorPalette.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new ColorPickerDialog(MyPaint.this, MyPaint.this,lastColor).show();
+
+
+                final ColorPicker colorPicker = new ColorPicker(MyPaint.this);
+                colorPicker.setDefaultColorButton(lastColor).setColumns(5).setOnChooseColorListener(new ColorPicker.OnChooseColorListener() {
+
+
+                        @Override
+                    public void onChooseColor(int position, int color) {
+
+                            if(color==0)  color= lastColor;
+
+                            drawView.setErase(false);
+                            drawView.setNewColor(color);
+                            colorChanged(color);
+
+                        }
+
+                    @Override
+                    public void onCancel() {
+
+                        if(drawView.getEraseStatus()==true) {
+                            drawView.setErase(true);
+                            drawView.setBrushSize((drawView.getLastBrushSize()));
+                        }
+
+
+
+                    }
+                }).setRoundColorButton(true).show();
+
             }
         });
 

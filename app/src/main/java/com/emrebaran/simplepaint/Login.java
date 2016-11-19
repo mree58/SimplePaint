@@ -1,9 +1,11 @@
 package com.emrebaran.simplepaint;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.DisplayMetrics;
@@ -57,7 +59,21 @@ public class Login  extends Activity{
                 showPopup(Login.this);
                 break;
             case R.id.btn_login_rate :
-                Toast.makeText(getApplication(),"Rate is not active",Toast.LENGTH_LONG).show();
+
+                Uri uri = Uri.parse("market://details?id=" + getApplicationContext().getPackageName());
+                Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+                // To count with Play market backstack, After pressing back button,
+                // to taken back to our application, we need to add following flags to intent.
+                goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
+                        Intent.FLAG_ACTIVITY_NEW_DOCUMENT |
+                        Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                try {
+                    startActivity(goToMarket);
+                } catch (ActivityNotFoundException e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("http://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName())));
+                }
+
                 break;
             case R.id.btn_login_quit :
                 //android.os.Process.killProcess(android.os.Process.myPid());
@@ -77,7 +93,7 @@ public class Login  extends Activity{
             View layout = inflater.inflate(R.layout.layout_about, (ViewGroup) findViewById(R.id.popup_1));
 
             float popupWidth = 350*metrics.scaledDensity;
-            float popupHeight = 450*metrics.scaledDensity;
+            float popupHeight = 460*metrics.scaledDensity;
 
             pw = new PopupWindow(context);
             pw.setContentView(layout);
