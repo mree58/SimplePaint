@@ -93,7 +93,7 @@ public class Login  extends Activity{
             View layout = inflater.inflate(R.layout.layout_about, (ViewGroup) findViewById(R.id.popup_1));
 
             float popupWidth = 350*metrics.scaledDensity;
-            float popupHeight = 460*metrics.scaledDensity;
+            float popupHeight = 480*metrics.scaledDensity;
 
             pw = new PopupWindow(context);
             pw.setContentView(layout);
@@ -106,7 +106,7 @@ public class Login  extends Activity{
             p.y = 50;
 
             int OFFSET_X = -50;
-            int OFFSET_Y = (int)(80*metrics.scaledDensity);
+            int OFFSET_Y = (int)(65*metrics.scaledDensity);
 
 
             pw.showAtLocation(layout, Gravity.TOP, p.x + OFFSET_X, p.y + OFFSET_Y);

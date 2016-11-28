@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +37,8 @@ public class MyPaint extends Activity {
     ImageButton btnColorPalette;
 
     int lastColor=0xFF0000FF;
+
+    int lastBrush=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,22 +105,86 @@ public class MyPaint extends Activity {
 
         switch (v.getId()){
             case R.id.btn_paint_brush :
-                drawView.setErase(false);
-                drawView.setNewColor(lastColor);
-                break;
-            case R.id.btn_paint_thickness :
 
                 final Dialog brushDialog = new Dialog(this);
                 brushDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                brushDialog.setContentView(R.layout.thickness_chooser);
+                brushDialog.setContentView(R.layout.brush_chooser);
+
+                final RadioGroup rdBrush = (RadioGroup)brushDialog.findViewById(R.id.rdBrush);
+
+                if(!drawView.getEraseStatus())
+                    switch (lastBrush)
+                    {
+                        case 1: rdBrush.check(R.id.radioNormal); break;
+                        case 2: rdBrush.check(R.id.radioShadow); break;
+                        case 3: rdBrush.check(R.id.radioBlur); break;
+                        case 4: rdBrush.check(R.id.radioEmboss); break;
+
+                    }
 
 
-                final TextView txtBrushTickness = (TextView) brushDialog.findViewById(R.id.txt_brush_thickness);
+                rdBrush.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+
+                        if(checkedId == R.id.radioNormal)
+                        {
+                            drawView.setErase(false);
+                            drawView.setNewColor(lastColor);
+                            drawView.setBrushFilter("normal");
+                            lastBrush = 1;
+                            brushDialog.dismiss();
+
+                        }
+                        else if(checkedId == R.id.radioShadow)
+                        {
+                            drawView.setErase(false);
+                            drawView.setNewColor(lastColor);
+                            drawView.setBrushFilter("shadow");
+                            lastBrush = 2;
+                            brushDialog.dismiss();
+
+                        }
+                        else if(checkedId == R.id.radioBlur)
+                        {
+                            drawView.setErase(false);
+                            drawView.setNewColor(lastColor);
+                            drawView.setBrushFilter("blur");
+                            lastBrush = 3;
+                            brushDialog.dismiss();
+
+                        }
+                        else if(checkedId == R.id.radioEmboss)
+                        {
+                            drawView.setErase(false);
+                            drawView.setNewColor(lastColor);
+                            drawView.setBrushFilter("emboss");
+                            lastBrush = 4;
+                            brushDialog.dismiss();
+
+                        }
+                    }
+                });
+
+                brushDialog.show();
+
+
+
+                break;
+            case R.id.btn_paint_thickness :
+
+                final Dialog thicknessDialog = new Dialog(this);
+                thicknessDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                thicknessDialog.setContentView(R.layout.thickness_chooser);
+
+
+                final TextView txtBrushTickness = (TextView) thicknessDialog.findViewById(R.id.txt_brush_thickness);
                 txtBrushTickness.setText(String.valueOf(drawView.getLastBrushSize()));
 
 
 
-                SeekBar sbBrushThickness = (SeekBar) brushDialog.findViewById(R.id.seekbar_brush_thickness);
+                SeekBar sbBrushThickness = (SeekBar) thicknessDialog.findViewById(R.id.seekbar_brush_thickness);
                 sbBrushThickness.setProgress((drawView.getLastBrushSize()));
 
                 sbBrushThickness.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -138,11 +205,11 @@ public class MyPaint extends Activity {
 
                         drawView.setBrushSize(seekBar.getProgress());
                         drawView.setLastBrushSize(seekBar.getProgress());
-                        brushDialog.dismiss();
+                        thicknessDialog.dismiss();
                     }
                 });
 
-                brushDialog.show();
+                thicknessDialog.show();
 
                 break;
             case R.id.btn_eraser :

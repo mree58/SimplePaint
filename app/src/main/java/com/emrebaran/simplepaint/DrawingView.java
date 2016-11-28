@@ -3,8 +3,10 @@ package com.emrebaran.simplepaint;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.EmbossMaskFilter;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
@@ -45,7 +47,37 @@ public class DrawingView extends View {
         drawPaint.setStrokeJoin(Paint.Join.ROUND);
         drawPaint.setStrokeCap(Paint.Cap.ROUND);
         canvasPaint = new Paint(Paint.DITHER_FLAG);
+
+        setBrushFilter("normal");
     }
+
+
+
+    public void setBrushFilter(String filterType) {
+
+        switch (filterType) {
+            case "normal":
+                drawPaint.setShadowLayer(0,0,0,paintColor);
+                drawPaint.setMaskFilter(null);
+                break;
+            case "shadow":
+                drawPaint.setMaskFilter(null);
+                drawPaint.setShadowLayer(15,15,15,Color.BLACK);
+                break;
+            case "blur":
+                drawPaint.setShadowLayer(0,0,0,paintColor);
+                BlurMaskFilter filterB = new BlurMaskFilter(10,  BlurMaskFilter.Blur.NORMAL );
+                drawPaint.setMaskFilter(filterB);
+                break;
+            case "emboss":
+                drawPaint.setShadowLayer(0,0,0,paintColor);
+                EmbossMaskFilter filterE = new EmbossMaskFilter(new float[] { 0f, 1f, 0.5f }, 0.8f, 3f, 3f);
+                drawPaint.setMaskFilter(filterE);
+                break;
+        }
+
+    }
+
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -118,7 +150,10 @@ public class DrawingView extends View {
         //	 drawPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
 
 
-        if(erase) drawPaint.setColor(Color.WHITE);
+        if(erase){
+            setBrushFilter("normal");
+            drawPaint.setColor(Color.WHITE);
+        }
         else drawPaint.setXfermode(null);
 
     }
